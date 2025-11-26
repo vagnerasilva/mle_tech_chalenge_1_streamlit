@@ -1,18 +1,30 @@
 import streamlit as st
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Título da aplicação
-st.title("Meu Primeiro App com Streamlit")
+# Título
+st.title("Exemplo de Histograma com Streamlit")
 
-# Texto simples
-st.write("Olá! Este é um exemplo básico de aplicação em Streamlit.")
+# Gerando dados aleatórios
+dados = np.random.randn(500)  # 500 valores de uma distribuição normal
 
-# Entrada de texto
-nome = st.text_input("Digite seu nome:")
+# Slider para escolher número de bins
+bins = st.slider("Número de bins:", min_value=5, max_value=50, value=20)
 
-# Botão
-if st.button("Enviar"):
-    st.success(f"Seja bem-vindo(a), {nome}!")
+# Criando o histograma com matplotlib
+fig, ax = plt.subplots()
+ax.hist(dados, bins=bins, color="skyblue", edgecolor="black")
+ax.set_title("Histograma - Matplotlib")
+ax.set_xlabel("Valores")
+ax.set_ylabel("Frequência")
 
-# Slider
-idade = st.slider("Selecione sua idade:", 0, 100, 25)
-st.write(f"Sua idade é: {idade}")
+# Exibindo no Streamlit
+st.pyplot(fig)
+
+# Também podemos usar seaborn
+st.subheader("Histograma com Seaborn")
+fig2, ax2 = plt.subplots()
+sns.histplot(dados, bins=bins, kde=True, color="orange", ax=ax2)
+ax2.set_title("Histograma - Seaborn")
+st.pyplot(fig2)
