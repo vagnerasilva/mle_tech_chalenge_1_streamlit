@@ -67,18 +67,49 @@ def fetch_logs(limit: int = LOGS_PER_PAGE, offset: int = 0, timeout: int = LOGS_
 def load_mock_data():
     """Carrega dados mockados do arquivo JSON"""
     logger.info("📋 Carregando dados mock do json_mock.json")
-    try:
-        with open("json_mock.json", "r") as f:
-            data = json.load(f)
-            logger.info(f"✅ Dados mock carregados! Total: {len(data)} registros")
-            return data
-    except FileNotFoundError:
-        logger.error("❌ Arquivo json_mock.json não encontrado!")
-        st.error("❌ Arquivo json_mock.json não encontrado!")
+    # Suporta vários nomes comuns (novo.json, json_mock.json)
+    candidates = ["novo.json"]
+    path = None
+    for c in candidates:
+        if os.path.exists(c):
+            path = c
+            break
+    if not path:
+        logger.error("❌ Arquivo de mock não encontrado (procurado: novo.json, json_mock.json)")
+        st.error("❌ Arquivo de mock não encontrado (novo.json ou json_mock.json)")
         return []
-    except json.JSONDecodeError:
-        logger.error("❌ Erro ao decodificar json_mock.json!")
-        st.error("❌ Erro ao decodificar json_mock.json!")
+
+    # Tentar decodificar com as codificações mais prováveis, cair para 'replace' se necessário
+    encodings = ["utf-8", "cp1252", "latin-1"]
+    last_exc = None
+    for enc in encodings:
+        try:
+            with open(path, "r", encoding=enc) as f:
+                data = json.load(f)
+                logger.info(f"✅ Dados mock carregados! (encoding={enc}) Total: {len(data)} registros")
+                return data
+        except (UnicodeDecodeError, json.JSONDecodeError) as e:
+            last_exc = e
+            logger.debug(f"Falha ao ler {path} com encoding={enc}: {e}")
+            continue
+
+    # Último recurso: abrir em binário e decodificar com replacement para garantir texto válido
+    try:
+        with open(path, "rb") as f:
+            raw = f.read()
+        text = raw.decode("utf-8", errors="replace")
+        data = json.loads(text)
+        # salvar uma cópia limpa para futuras execuções
+        clean_path = os.path.splitext(path)[0] + "_clean.json"
+        with open(clean_path, "w", encoding="utf-8") as cf:
+            cf.write(text)
+        logger.info(f"✅ Dados mock carregados via fallback e salvos em {clean_path}. Total: {len(data)} registros")
+        return data
+    except Exception as e:
+        logger.error(f"❌ Não foi possível ler/parsear {path}: {e}")
+        st.error(f"❌ Erro ao carregar dados mock: {e}")
+        if last_exc:
+            logger.debug(f"Erro original: {last_exc}")
         return []
 
 def convert_logs_to_dataframe(logs):
