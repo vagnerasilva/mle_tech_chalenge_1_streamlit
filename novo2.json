@@ -1,0 +1,889 @@
+[
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 1.0833820002153516,
+        "path": "/api/v1/books/",
+        "id": 1,
+        "status_code": 200,
+        "response_body": [],
+        "path_params": {},
+        "created_at": "2025-11-30T19:30:05.299639"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 0.005570299923419952,
+        "path": "/",
+        "id": 2,
+        "status_code": 200,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:39:32.092283"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 0.003397699911147356,
+        "path": "/",
+        "id": 3,
+        "status_code": 200,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:40:11.519120"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 0.004608399933204055,
+        "path": "/",
+        "id": 4,
+        "status_code": 200,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:46:01.552882"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 0.003090800018981099,
+        "path": "/login",
+        "id": 5,
+        "status_code": 307,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:46:15.130644"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 0.01701329997740686,
+        "path": "/login/",
+        "id": 6,
+        "status_code": 307,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:46:15.177466"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {
+            "code": "d4f59ea263afdd66306f",
+            "state": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJmYXN0YXBpLXVzZXJzOm9hdXRoLXN0YXRlIiwiZXhwIjoxNzI0Njc0NzQzfQ.OMLMhFaAd2rFQ1GvX5f6u6DMOeIhHFstNOaBiQE8oKg"
+        },
+        "process_time": 0.002106900094076991,
+        "path": "/callback",
+        "id": 7,
+        "status_code": 307,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:46:15.757309"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {
+            "code": "d4f59ea263afdd66306f",
+            "state": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJmYXN0YXBpLXVzZXJzOm9hdXRoLXN0YXRlIiwiZXhwIjoxNzI0Njc0NzQzfQ.OMLMhFaAd2rFQ1GvX5f6u6DMOeIhHFstNOaBiQE8oKg"
+        },
+        "process_time": 2.753549200017005,
+        "path": "/callback/",
+        "id": 8,
+        "status_code": 307,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:46:18.522921"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 1.4007172000128776,
+        "path": "/api/v1/home",
+        "id": 9,
+        "status_code": 307,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:46:19.938669"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 1.109066299861297,
+        "path": "/api/v1/home/",
+        "id": 10,
+        "status_code": 200,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:46:21.061003"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 2.344554000068456,
+        "path": "/api/v1/home/",
+        "id": 11,
+        "status_code": 200,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:47:27.348208"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 0.018510299967601895,
+        "path": "/docs",
+        "id": 12,
+        "status_code": 200,
+        "response_body": null,
+        "path_params": {},
+        "created_at": "2025-11-30T19:48:29.450385"
+    },
+    {
+        "ip_address": "127.0.0.1",
+        "method": "GET",
+        "api_key": null,
+        "request_body": null,
+        "query_params": {},
+        "process_time": 0.1458922999445349,
+        "path": "/openapi.json",
+        "id": 13,
+        "status_code": 200,
+        "response_body": {
+            "openapi": "3.1.0",
+            "info": {
+                "title": "Books to scrap",
+                "description": "Documentação da API",
+                "version": "1.0.0"
+            },
+            "servers": [
+                {
+                    "url": "https://mle-tech-chalenge-1.vercel.app/",
+                    "description": "Produção"
+                },
+                {
+                    "url": "http://localhost:8000/",
+                    "description": "Desenvolvimento"
+                }
+            ],
+            "paths": {
+                "/": {
+                    "get": {
+                        "tags": [
+                            "no_logged"
+                        ],
+                        "summary": "No Logged In",
+                        "description": "Rota raiz para primeiro acesso e primeiras instruções",
+                        "operationId": "no_logged_in__get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "text/html": {
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/home/": {
+                    "get": {
+                        "tags": [
+                            "home"
+                        ],
+                        "summary": "Home",
+                        "description": "Rota acessada após o login, contendo informações sobre as rotas da api",
+                        "operationId": "home_api_v1_home__get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "text/html": {
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/login/": {
+                    "get": {
+                        "tags": [
+                            "login"
+                        ],
+                        "summary": "Login",
+                        "description": "Rota que faz a autenticação e redireciona para o github",
+                        "operationId": "login_login__get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/callback/": {
+                    "get": {
+                        "tags": [
+                            "callback"
+                        ],
+                        "summary": "Callback",
+                        "description": "Mostra a tela de autenticação.\nMais informações: \nhttps://medium.com/@bhuwan.pandey9867/github-authentication-with-python-fastapi-446a20e60d5a",
+                        "operationId": "callback_callback__get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/books/": {
+                    "get": {
+                        "tags": [
+                            "books"
+                        ],
+                        "summary": "Lista Books",
+                        "description": "Lista as informações de todos os livros cadastrados",
+                        "operationId": "lista_books_api_v1_books__get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "items": {
+                                                "$ref": "#/components/schemas/BookSchema"
+                                            },
+                                            "type": "array",
+                                            "title": "Response Lista Books Api V1 Books  Get"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/books/top-rated": {
+                    "get": {
+                        "tags": [
+                            "books"
+                        ],
+                        "summary": "Obter Melhores Livros",
+                        "description": "Retorna os n livros com melhor avaliação, por padrão, os 5 melhores",
+                        "operationId": "obter_melhores_livros_api_v1_books_top_rated_get",
+                        "parameters": [
+                            {
+                                "name": "quant",
+                                "in": "query",
+                                "required": false,
+                                "schema": {
+                                    "anyOf": [
+                                        {
+                                            "type": "integer"
+                                        },
+                                        {
+                                            "type": "null"
+                                        }
+                                    ],
+                                    "description": "Quantidade de livros a serem listados",
+                                    "default": 5,
+                                    "title": "Quant"
+                                },
+                                "description": "Quantidade de livros a serem listados"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/BookSchema"
+                                            },
+                                            "title": "Response Obter Melhores Livros Api V1 Books Top Rated Get"
+                                        }
+                                    }
+                                }
+                            },
+                            "422": {
+                                "description": "Validation Error",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/books/price-range": {
+                    "get": {
+                        "tags": [
+                            "books"
+                        ],
+                        "summary": "Obter Livros Na Faixa De Preco",
+                        "description": "Obtem os livros que estão em uma determinada faixa de preço",
+                        "operationId": "obter_livros_na_faixa_de_preco_api_v1_books_price_range_get",
+                        "parameters": [
+                            {
+                                "name": "min",
+                                "in": "query",
+                                "required": true,
+                                "schema": {
+                                    "type": "number",
+                                    "description": "Menor preço",
+                                    "title": "Min"
+                                },
+                                "description": "Menor preço"
+                            },
+                            {
+                                "name": "max",
+                                "in": "query",
+                                "required": true,
+                                "schema": {
+                                    "type": "number",
+                                    "description": "Maior preço",
+                                    "title": "Max"
+                                },
+                                "description": "Maior preço"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/BookSchema"
+                                            },
+                                            "title": "Response Obter Livros Na Faixa De Preco Api V1 Books Price Range Get"
+                                        }
+                                    }
+                                }
+                            },
+                            "422": {
+                                "description": "Validation Error",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/books/search": {
+                    "get": {
+                        "tags": [
+                            "books"
+                        ],
+                        "summary": "Pesquisar Books",
+                        "description": "Realiza busca de livro com base no titulo e/ou categoria",
+                        "operationId": "pesquisar_books_api_v1_books_search_get",
+                        "parameters": [
+                            {
+                                "name": "title",
+                                "in": "query",
+                                "required": false,
+                                "schema": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "null"
+                                        }
+                                    ],
+                                    "description": "Título do livro",
+                                    "title": "Title"
+                                },
+                                "description": "Título do livro"
+                            },
+                            {
+                                "name": "category",
+                                "in": "query",
+                                "required": false,
+                                "schema": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "null"
+                                        }
+                                    ],
+                                    "description": "Categoria do livro",
+                                    "title": "Category"
+                                },
+                                "description": "Categoria do livro"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/BookSchema"
+                                            },
+                                            "title": "Response Pesquisar Books Api V1 Books Search Get"
+                                        }
+                                    }
+                                }
+                            },
+                            "422": {
+                                "description": "Validation Error",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/books/{book_id}": {
+                    "get": {
+                        "tags": [
+                            "books"
+                        ],
+                        "summary": "Obter Book",
+                        "description": "Busca por um livro especifico com base em seu ID",
+                        "operationId": "obter_book_api_v1_books__book_id__get",
+                        "parameters": [
+                            {
+                                "name": "book_id",
+                                "in": "path",
+                                "required": true,
+                                "schema": {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "description": "O identificador único do book a ser buscado",
+                                    "title": "Book Id"
+                                },
+                                "description": "O identificador único do book a ser buscado"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/BookSchema"
+                                        }
+                                    }
+                                }
+                            },
+                            "422": {
+                                "description": "Validation Error",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/scraping/": {
+                    "get": {
+                        "tags": [
+                            "scraping"
+                        ],
+                        "summary": "Popular Db Com Scraping",
+                        "description": "Popula o banco de dados com as informações obtidas no site",
+                        "operationId": "popular_db_com_scraping_api_v1_scraping__get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "type": "string",
+                                            "title": "Response Popular Db Com Scraping Api V1 Scraping  Get"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/categories/": {
+                    "get": {
+                        "tags": [
+                            "categories"
+                        ],
+                        "summary": "Lista Categorias",
+                        "description": "Lista todas as categorias de livros",
+                        "operationId": "lista_categorias_api_v1_categories__get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "items": {
+                                                "$ref": "#/components/schemas/CategorySchema"
+                                            },
+                                            "type": "array",
+                                            "title": "Response Lista Categorias Api V1 Categories  Get"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/health/": {
+                    "get": {
+                        "tags": [
+                            "health"
+                        ],
+                        "summary": "Health Check",
+                        "description": "Verifica status da API e conectividade com os dados.",
+                        "operationId": "health_check_api_v1_health__get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "additionalProperties": true,
+                                            "type": "object",
+                                            "title": "Response Health Check Api V1 Health  Get"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/stats/overview": {
+                    "get": {
+                        "tags": [
+                            "stats"
+                        ],
+                        "summary": "Gera Estatisticas Gerais",
+                        "description": "Gera as estatisticas gerais sobre os libros cadastrados.",
+                        "operationId": "gera_estatisticas_gerais_api_v1_stats_overview_get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/BookOverviewSchema"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/stats/categories": {
+                    "get": {
+                        "tags": [
+                            "stats"
+                        ],
+                        "summary": "Gera Estatisticas Por Categorias",
+                        "description": "Gera estatisticas sobre as categorias",
+                        "operationId": "gera_estatisticas_por_categorias_api_v1_stats_categories_get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "items": {
+                                                "$ref": "#/components/schemas/CategoryOverviewSchema"
+                                            },
+                                            "type": "array",
+                                            "title": "Response Gera Estatisticas Por Categorias Api V1 Stats Categories Get"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/api/v1/logout/": {
+                    "get": {
+                        "tags": [
+                            "logout"
+                        ],
+                        "summary": "Logout",
+                        "description": "Rota para sair da api.",
+                        "operationId": "logout_api_v1_logout__get",
+                        "responses": {
+                            "200": {
+                                "description": "Successful Response",
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "components": {
+                "schemas": {
+                    "BookOverviewSchema": {
+                        "properties": {
+                            "total_books": {
+                                "type": "number",
+                                "title": "Total Books"
+                            },
+                            "avg_price": {
+                                "type": "number",
+                                "title": "Avg Price"
+                            },
+                            "avg_rating": {
+                                "type": "number",
+                                "title": "Avg Rating"
+                            },
+                            "distribution_rating": {
+                                "additionalProperties": true,
+                                "type": "object",
+                                "title": "Distribution Rating"
+                            }
+                        },
+                        "type": "object",
+                        "required": [
+                            "total_books",
+                            "avg_price",
+                            "avg_rating",
+                            "distribution_rating"
+                        ],
+                        "title": "BookOverviewSchema"
+                    },
+                    "BookSchema": {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "title": "Id"
+                            },
+                            "title": {
+                                "type": "string",
+                                "title": "Title"
+                            },
+                            "description": {
+                                "type": "string",
+                                "title": "Description"
+                            },
+                            "product_type": {
+                                "type": "string",
+                                "title": "Product Type"
+                            },
+                            "price_excl_tax": {
+                                "type": "number",
+                                "title": "Price Excl Tax"
+                            },
+                            "price_incl_tax": {
+                                "type": "number",
+                                "title": "Price Incl Tax"
+                            },
+                            "tax": {
+                                "type": "number",
+                                "title": "Tax"
+                            },
+                            "availability": {
+                                "type": "integer",
+                                "title": "Availability"
+                            },
+                            "number_of_reviews": {
+                                "type": "integer",
+                                "title": "Number Of Reviews"
+                            },
+                            "upc": {
+                                "type": "string",
+                                "title": "Upc"
+                            },
+                            "rating": {
+                                "type": "integer",
+                                "title": "Rating"
+                            },
+                            "category_id": {
+                                "type": "integer",
+                                "title": "Category Id"
+                            },
+                            "image_url": {
+                                "type": "string",
+                                "title": "Image Url"
+                            }
+                        },
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "title",
+                            "description",
+                            "product_type",
+                            "price_excl_tax",
+                            "price_incl_tax",
+                            "tax",
+                            "availability",
+                            "number_of_reviews",
+                            "upc",
+                            "rating",
+                            "category_id",
+                            "image_url"
+                        ],
+                        "title": "BookSchema"
+                    },
+                    "CategoryOverviewSchema": {
+                        "properties": {
+                            "category": {
+                                "type": "string",
+                                "title": "Category"
+                            },
+                            "total_books": {
+                                "type": "integer",
+                                "title": "Total Books"
+                            },
+                            "avg_price": {
+                                "type": "number",
+                                "title": "Avg Price"
+                            }
+                        },
+                        "type": "object",
+                        "required": [
+                            "category",
+                            "total_books",
+                            "avg_price"
+                        ],
+                        "title": "CategoryOverviewSchema"
+                    },
+                    "CategorySchema": {
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "title": "Id"
+                            },
+                            "name": {
+                                "type": "string",
+                                "title": "Name"
+                            }
+                        },
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "name"
+                        ],
+                        "title": "CategorySchema"
+                    },
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "type": "array",
+                                "title": "Detail"
+                            }
+                        },
+                        "type": "object",
+                        "title": "HTTPValidationError"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "type": "array",
+                                "title": "Location"
+                            },
+                            "msg": {
+                                "type": "string",
+                                "title": "Message"
+                            },
+                            "type": {
+                                "type": "string",
+                                "title": "Error Type"
+                            }
+                        },
+                        "type": "object",
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError"
+                    }
+                }
+            }
+        },
+        "path_params": {},
+        "created_at": "2025-11-30T19:48:29.773527"
+    },

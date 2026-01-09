@@ -41,22 +41,23 @@ LOGS_ENDPOINT = f"{API_BASE_URL}/api_logs"
 
 # ========== CONSTANTS ==========
 LOGS_PER_PAGE = 2  # Número de logs por requisição
+LOGS_TIMEOUT = 100  # Timeout padrão em segundos para requisições à API
 
 # ========== CACHE ==========
 @st.cache_data(ttl=300)  # Cache por 5 minutos
-def fetch_logs(limit: int = LOGS_PER_PAGE, offset: int = 0):
-    """Busca logs da API com paginação"""
-    logger.info(f"🔍 Buscando logs da API - limit: {limit}, offset: {offset}")
+def fetch_logs(limit: int = LOGS_PER_PAGE, offset: int = 0, timeout: int = LOGS_TIMEOUT):
+    """Busca logs da API com paginação e timeout configurável"""
+    logger.info(f"🔍 Buscando logs da API - limit: {limit}, offset: {offset}, timeout: {timeout}s")
     try:
         params = {"limit": limit, "offset": offset}
-        response = requests.get(LOGS_ENDPOINT, params=params, timeout=10)
+        response = requests.get(LOGS_ENDPOINT, params=params, timeout=timeout)
         response.raise_for_status()
         logs = response.json()
         logger.info(f"✅ Logs obtidos com sucesso! Total: {len(logs)} registros")
         return logs
     except requests.exceptions.Timeout:
-        logger.error("❌ Timeout: A API demorou muito para responder")
-        st.error("⏱️ Timeout: A API demorou muito para responder. Reduzindo limite...")
+        logger.error(f"❌ Timeout após {timeout}s: A API demorou muito para responder")
+        st.error(f"⏱️ Timeout após {timeout}s: A API demorou muito para responder.")
         return []
     except requests.exceptions.RequestException as e:
         logger.error(f"❌ Erro ao conectar à API: {e}")
@@ -123,6 +124,10 @@ with st.sidebar:
     # Controle de limite de logs
     logs_limit = st.slider("Limite de Logs", min_value=2, max_value=5000, value=2, step=1)
     
+    # Tempo de espera (timeout) configurável
+    logs_timeout = st.number_input("Timeout (s)", min_value=1, max_value=120, value=LOGS_TIMEOUT, step=1,
+                                   help="Tempo máximo (em segundos) para esperar a resposta da API")
+    
     st.markdown("---")
     
     # Seletor de fonte de dados
@@ -142,20 +147,63 @@ with st.sidebar:
     st.markdown("---")
     
     refresh = st.button("🔄 Atualizar Dados", use_container_width=True)
-    
+
+    # Inicializar last_refresh se não existir
     if "last_refresh" not in st.session_state:
         st.session_state.last_refresh = datetime.now()
-    
+
+    # Inicializar fetch_params na session com valores padrão (executa na primeira carga)
+    if "fetch_params" not in st.session_state:
+        st.session_state.fetch_params = {
+            "limit": logs_limit,
+            "timeout": LOGS_TIMEOUT,
+            "data_source": ("📋 Mock" if default_source_index == 1 else "🔗 API")
+        }
+
+    # Ao apertar atualizar, gravar os valores selecionados em session_state.fetch_params
     if refresh:
+        st.session_state.fetch_params = {
+            "limit": logs_limit,
+            "timeout": logs_timeout,
+            "data_source": data_source
+        }
         st.cache_data.clear()
         st.session_state.last_refresh = datetime.now()
-        st.rerun()
-    
+        # Tentar forçar rerun. Se `experimental_rerun` não existir na versão do Streamlit,
+        # usar um fallback que altera query params para acionar uma nova execução.
+        try:
+            if hasattr(st, "experimental_rerun"):
+                st.experimental_rerun()
+            else:
+                raise AttributeError("experimental_rerun not available")
+        except Exception:
+            # Fallback: toggle a session key e set_query_params para forçar reload
+            st.session_state["_rerun_trigger"] = st.session_state.get("_rerun_trigger", 0) + 1
+            try:
+                # Nova API: atribuir a `st.query_params` para atualizar os query params
+                try:
+                    current_qp = dict(st.query_params)
+                except Exception:
+                    current_qp = {}
+                current_qp["_rs"] = str(st.session_state["_rerun_trigger"])
+                try:
+                    st.query_params = current_qp
+                except Exception:
+                    # última alternativa: apenas escrever um aviso (não trava a UI)
+                    logger.warning("Não foi possível atualizar st.query_params; atualize a página manualmente.")
+            except Exception:
+                logger.warning("Não foi possível forçar rerun automaticamente; atualize a página manualmente.")
+
     st.markdown(f"**Última atualização:** {st.session_state.last_refresh.strftime('%H:%M:%S')}")
 
 # ========== MAIN ==========
-# Buscar dados de acordo com a fonte selecionada
-if data_source == "📋 Mock":
+# Buscar dados usando os parâmetros salvos em session_state.fetch_params
+params = st.session_state.get('fetch_params', {})
+p_limit = params.get('limit', LOGS_PER_PAGE)
+p_timeout = params.get('timeout', LOGS_TIMEOUT)
+p_data_source = params.get('data_source', ("📋 Mock" if default_source_index == 1 else "🔗 API"))
+
+if p_data_source == "📋 Mock":
     st.sidebar.success("📋 Usando dados MOCK")
     logger.info("=" * 60)
     logger.info("🎯 INICIANDO CARREGAMENTO DE DADOS MOCK")
@@ -166,12 +214,13 @@ else:
     logger.info("=" * 60)
     logger.info("🎯 INICIANDO CARREGAMENTO DE DADOS DA API")
     logger.info("=" * 60)
-    logs = fetch_logs(limit=logs_limit, offset=0)
+    logger.info(f"⏳ Usando timeout de {p_timeout}s para a requisição")
+    logs = fetch_logs(limit=p_limit, offset=0, timeout=int(p_timeout))
 
 df = convert_logs_to_dataframe(logs)
 
-# Debug: mostrar fonte usada
-st.sidebar.info(f"📡 Buscando {logs_limit} logs")
+# Debug: mostrar parâmetros usados (aplicados)
+st.sidebar.info(f"📡 Parâmetros aplicados — Fonte: {p_data_source} | Limit: {p_limit} | Timeout: {p_timeout}s")
 logger.info("=" * 60)
 
 if df.empty:
