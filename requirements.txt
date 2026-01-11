@@ -2,6 +2,6 @@ streamlit==1.40.0
 matplotlib
 seaborn==0.13.2
 numpy
-pandas==2.2.0
+pandas==2.2.2
 requests==2.32.3
 python-dotenv==1.0.0
