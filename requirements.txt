@@ -1,7 +1,6 @@
-streamlit==1.40.0
-matplotlib>=3.9.2
-seaborn==0.13.2
-numpy>=2.1.0
-pandas>=2.2.3
-requests==2.32.3
-python-dotenv==1.0.1
+streamlit>=1.32
+requests>=2.31
+pandas>=2.2
+matplotlib>=3.8
+seaborn>=0.13
+python-dotenv>=1.0
