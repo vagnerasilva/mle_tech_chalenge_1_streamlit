@@ -68,7 +68,7 @@ def load_mock_data():
     """Carrega dados mockados do arquivo JSON"""
     logger.info("📋 Carregando dados mock do json_mock.json")
     # Suporta vários nomes comuns (novo.json, json_mock.json)
-    candidates = ["novo.json"]
+    candidates = ["json_mock.json"]
     path = None
     for c in candidates:
         if os.path.exists(c):
@@ -153,8 +153,8 @@ with st.sidebar:
     st.markdown("---")
     
     # Controle de limite de logs
-    logs_limit = st.slider("Limite de Logs", min_value=2, max_value=5000, value=2, step=1)
-    
+    #logs_limit = st.slider("Limite de Logs", min_value=2, max_value=5000, value=2, step=1)
+    logs_limit = 500
     # Tempo de espera (timeout) configurável
     logs_timeout = st.number_input("Timeout (s)", min_value=1, max_value=120, value=LOGS_TIMEOUT, step=1,
                                    help="Tempo máximo (em segundos) para esperar a resposta da API")
