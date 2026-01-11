@@ -1,7 +1,7 @@
 streamlit==1.40.0
-matplotlib
+matplotlib>=3.9.2
 seaborn==0.13.2
-numpy
-pandas==2.2.2
+numpy>=2.1.0
+pandas>=2.2.3
 requests==2.32.3
-python-dotenv==1.0.0
+python-dotenv==1.0.1
